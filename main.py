@@ -9,6 +9,12 @@ app = quart_cors.cors(quart.Quart(__name__), allow_origin="https://chat.openai.c
 # Keep track of todo's. Does not persist if Python session is restarted.
 _TODOS = {}
 
+# 起動確認用
+@app.route('/')
+async def hello():
+    return 'Hello, Quart!'
+
+
 @app.post("/todos/<string:username>")
 async def add_todo(username):
     request = await quart.request.get_json(force=True)

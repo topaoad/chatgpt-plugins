@@ -29,3 +29,24 @@ The plugin should now be installed and enabled! You can start with a question li
 ## Getting help
 
 If you run into issues or have questions building a plugin, please join our [Developer community forum](https://community.openai.com/c/chat-plugins/20).
+
+
+## 開発環境について
+venv環境推奨。現在のところDockerへのマウントは検討していない。
+venv環境構築の手順
+- python3 -m venv venv でvenvを作成する
+- source venv/bin/activate でvenvの環境を起動する
+- pip install -r requirements.txt
+- python script.py などでスクリプトの実行をする
+- deactivate でvenvの環境を終了する
+
+## 必要な構築物について
+- マニフェストファイル(ai-plugin.json)の作成
+- モックAPI（main.py）の作成
+- Open APIの定義 (openapi.yaml)の作成
+- プラグインの実行スクリプト
+
+## 必要な構築物について
+- APIエンドポイントの作成（API Gateway✖︎Lambda）
+- モックAPIの内容の精査
+- 必要に応じてDBの作成やDocker環境の構築
